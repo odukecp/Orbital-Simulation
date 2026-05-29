@@ -7,18 +7,17 @@
 //     \|_______|\|__|\|__|         (by Oskar Herzog)
 //
 
-import './styles/style.css';
-import { adjustCoordinates, pointsToMatrix } from './rendering/heatmap/preparePoints';
-import { renderPoints } from './rendering/three/renderPoints';
-import { create3DGrid } from './simulation/grid';
-import { normalize } from './simulation/normalization';
-import { flattenPoints } from './simulation/sampling2d';
-import { applyThreshold, subsample } from './simulation/threshold';
-import { applyWavefunction } from './simulation/wavefunction';
-import { aELOrbSelSubmit } from './ui/eventListeners';
-import { hideLoader, showLoader } from './ui/loader';
-import { removeExistingHMCanvases } from './ui/base';
-import { createHeatmap } from './rendering/heatmap/createHeatmap';
+import { adjustCoordinates, pointsToMatrix } from './rendering/heatmap/preparePoints.js';
+import { renderPoints } from './rendering/three/renderPoints.js';
+import { create3DGrid } from './simulation/grid.js';
+import { normalize } from './simulation/normalization.js';
+import { flattenPoints } from './simulation/sampling2d.js';
+import { applyThreshold, subsample } from './simulation/threshold.js';
+import { applyWavefunction } from './simulation/wavefunction.js';
+import { aELOrbSelSubmit } from './ui/eventListeners.js';
+import { hideLoader, showLoader } from './ui/loader.js';
+import { removeExistingHMCanvases } from './ui/base.js';
+import { createHeatmap } from './rendering/heatmap/createHeatmap.js';
 
 aELOrbSelSubmit(initGeneration);
 
