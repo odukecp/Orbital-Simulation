@@ -1,4 +1,4 @@
-import { factorial, doubleFactorial, complex, complexSq, complexExp } from './math';
+import { factorial, doubleFactorial, complex, complexSq, complexExp } from './math.js';
 
 function validateQuantumNumbers(n, l, m) {
     if (n < 1) {
