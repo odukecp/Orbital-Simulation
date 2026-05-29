@@ -1,0 +1,103 @@
+:root {
+    --primary: #ff1414;
+    --primary-transp: rgba(255, 20, 20, 0.3);
+    --secondary: #14ffff;
+    --secondary-transp: rgba(20, 255, 255, 0.3);
+    --black-transp: rgba(0, 0, 0, 0.3);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 5vh 5vw 5vh 5vw;
+}
+
+fieldset,
+[type='number'] {
+    margin: 10px 0 10px 0;
+}
+
+[type='number'] {
+    width: 50px;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+p.footer {
+    flex: 1;
+}
+
+.link {
+    color: var(--secondary);
+}
+
+form#advanced-toggle {
+    padding-top: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+#viewport-wrap {
+    width: 100%;
+    height: 60vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+.heatmap-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.heatmap-wrap {
+    width: 30vw;
+    height: 30vw;
+}
+
+.loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-transp);
+    z-index: 99999;
+}
+
+.loader-spinner {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 8px solid var(--black-transp);
+    border-top: 8px solid var(--secondary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
