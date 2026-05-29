@@ -1,4 +1,4 @@
-import { validateQuantumNumbers, wavefunction } from '../utils/physics';
+import { validateQuantumNumbers, wavefunction } from '../utils/physics.js';
 
 function applyWavefunction(points, config) {
     const { n, l, m } = config;

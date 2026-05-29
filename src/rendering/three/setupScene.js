@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { get3DViewport } from '../../ui/base';
-import { readConfig } from '../../config/readConfig';
+import { get3DViewport } from '../../ui/base.js';
+import { readConfig } from '../../config/readConfig.js';
 
 const viewportWrap = get3DViewport();
 const viewportHeight = viewportWrap.clientHeight;

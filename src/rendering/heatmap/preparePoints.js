@@ -1,5 +1,5 @@
-import { getHeatmapWrap } from '../../ui/base';
-import { analyzeArrayOfObjects } from '../../utils/math';
+import { getHeatmapWrap } from '../../ui/base.js';
+import { analyzeArrayOfObjects } from '../../utils/math.js';
 
 function adjustCoordinates(points, id) {
     const wrap = getHeatmapWrap(id);

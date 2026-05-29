@@ -1,4 +1,4 @@
-import { maxValue } from '../utils/math';
+import { maxValue } from '../utils/math.js';
 
 function normalize(points) {
     let max = maxValue(points);

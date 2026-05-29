@@ -1,4 +1,4 @@
-import { readConfig } from '../config/readConfig';
+import { readConfig } from '../config/readConfig.js';
 
 function aELOrbSelSubmit(onClick) {
     const form = document.getElementById('view-select');

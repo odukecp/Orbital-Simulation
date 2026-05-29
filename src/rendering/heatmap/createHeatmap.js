@@ -1,4 +1,4 @@
-import { getHeatmapWrap } from '../../ui/base';
+import { getHeatmapWrap } from '../../ui/base.js';
 import Plotly from 'plotly.js-dist';
 
 function createHeatmap(matrix, id) {

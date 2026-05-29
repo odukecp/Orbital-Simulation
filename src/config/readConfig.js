@@ -1,4 +1,4 @@
-import { defaultConfig } from './defaultConfig';
+import { defaultConfig } from './defaultConfig.js';
 
 function readConfig() {
     return {
