@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>orbital-simulation</title>
+      <script type="module" crossorigin src="/Orbital-Simulation/assets/index-CvKowB3d.js"></script>
+      <link rel="stylesheet" crossorigin href="/Orbital-Simulation/assets/index-D36Pb4i4.css">
+    </head>
+    <body>
+        <main>
+            <h1>Atom-Orbitale</h1>
+            <div class="config wrap">
+                <form id="orbital-select">
+                    <fieldset>
+                        <legend>Quantenzahlen</legend>
+
+                        <label for="form-n">n</label>
+                        <input id="form-n" type="number">
+
+                        <label for="form-l">l</label>
+                        <input id="form-l" type="number">
+
+                        <label for="form-m">m</label>
+                        <input id="form-m" type="number">
+                    </fieldset>
+                </form>
+                <form id="view-select">
+                    <fieldset>
+                        <legend>Darstellung</legend>
+                        <button type="submit">Orbital Generieren</button>
+                    </fieldset>
+                </form>
+                <form id="advanced" class="advanced hidden">
+                    <fieldset>
+                        <legend>Advanced-Settings</legend>
+                        <p>Ich empfehle an diesen Einstellungen nichts zu ändern!</p>
+                        <fieldset>
+                            <legend>Graphic</legend>
+
+                            <label for="form-size">Size</label>
+                            <input id="form-size" type="number">
+
+                            <label for="form-count">Count</label>
+                            <input id="form-count" type="number">
+                        </fieldset>
+                        <fieldset>
+                            <legend>Heatmap</legend>
+
+                            <label for="form-radius">Radius</label>
+                            <input id="form-radius" type="number">
+
+                            <label for="form-maxopacity">Max Opacity</label>
+                            <input id="form-maxopacity" type="number">
+
+                            <label for="form-minopacity">Min Opacity</label>
+                            <input id="form-minopacity" type="number">
+
+                            <label for="form-blur">Blur</label>
+                            <input id="form-blur" type="number">
+                        </fieldset>
+                        <fieldset>
+                            <legend>3D-Grid</legend>
+
+                            <label for="form-threshold">Threshold</label>
+                            <input id="form-threshold" type="number">
+
+                            <label for="form-reduce">Reduce</label>
+                            <input id="form-reduce" type="number">
+                        </fieldset>
+                    </fieldset>
+                </form>
+            </div>
+            
+            <div id="viewport-wrap"></div>
+
+            <div class="heatmap-container">
+             <div class="heatmap-wrap" id="heatmap-1"></div>
+             <div class="heatmap-wrap" id="heatmap-2"></div>
+             <div class="heatmap-wrap" id="heatmap-3"></div>
+            </div>
+        </main>
+        <footer>
+            <p class="footer">Made by <a href="https://github.com/odukecp" class="link">Oskar Herzog</a> using <a href="https://www.patrick-wied.at/static/heatmapjs/" class="link">heatmap.js</a> by Patrick Wied and <a href="https://threejs.org/" class="link">three.js</a> </p>
+            <form id="advanced-toggle">
+                <label for="advanced-toggle">Erweiterte Einstellungen</label>
+                <input type="checkbox" name="advanced-toggle" onclick="
+                    const advancedElements = document.querySelectorAll('.advanced');
+                    advancedElements.forEach(advancedElement => {
+                        advancedElement.classList.toggle('hidden');
+                    });"
+                >
+            </form>
+        </footer>
+    </body>
+</html>

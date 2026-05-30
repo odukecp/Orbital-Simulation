@@ -7,7 +7,12 @@
 //     \|_______|\|__|\|__|         (by Oskar Herzog)
 //
 
-import { adjustCoordinates, pointsToMatrix } from './rendering/heatmap/preparePoints.js';
+import './styles/style.css';
+import {
+    adjustCoordinates,
+    applyLogValues,
+    pointsToMatrix,
+} from './rendering/heatmap/preparePoints.js';
 import { renderPoints } from './rendering/three/renderPoints.js';
 import { create3DGrid } from './simulation/grid.js';
 import { normalize } from './simulation/normalization.js';
@@ -52,8 +57,12 @@ async function initGeneration(config) {
     points = applyWavefunction(points, config);
 
     let nonXPoints = flattenPoints(points, false, true, true);
+    // console.log(nonXPoints);
+    // nonXPoints = applyLogValues(nonXPoints);
+    nonXPoints = normalize(nonXPoints);
     nonXPoints = adjustCoordinates(nonXPoints, 1);
     let nonXMatrix = pointsToMatrix(nonXPoints, 1);
+    // console.log(nonXMatrix);
     createHeatmap(nonXMatrix, 1);
     hideLoader('heatmap-1');
 

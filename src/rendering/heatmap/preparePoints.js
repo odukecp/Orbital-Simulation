@@ -18,6 +18,18 @@ function adjustCoordinates(points, id) {
     return points;
 }
 
+function applyLogValues(points) {
+    let loged = [];
+    points.forEach((point) => {
+        loged.push({
+            x: point.x,
+            y: point.y,
+            value: Math.log10(point.value),
+        });
+    });
+    return loged;
+}
+
 function createMatrix(size) {
     return Array.from({ length: size }, () => Array(size).fill(0));
 }
@@ -36,4 +48,4 @@ function pointsToMatrix(points, id) {
     return matrix;
 }
 
-export { adjustCoordinates, createMatrix, pointsToMatrix };
+export { adjustCoordinates, createMatrix, pointsToMatrix, applyLogValues };
