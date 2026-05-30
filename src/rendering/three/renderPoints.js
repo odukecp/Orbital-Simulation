@@ -22,8 +22,11 @@ function renderPoints(points, config) {
         const shift = Math.random() / 5;
         positions.push(point.x + shift, point.y + shift, point.z + shift);
 
-        let cI = 9 - Math.round(-Math.log10(point.value) * 4);
-        if (cI > 9) cI = 9;
+        let cI =
+            colormap.length -
+            1 -
+            Math.round(-Math.log10(point.value) * Math.floor(colormap.length / 2));
+        if (cI > colormap.length) cI = colormap.length;
         if (cI < 0) cI = 0;
         colors.push(colormap[cI].r / 255, colormap[cI].g / 255, colormap[cI].b / 255);
     });

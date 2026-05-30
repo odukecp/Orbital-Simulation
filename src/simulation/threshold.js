@@ -1,15 +1,15 @@
 function applyThreshold(points, config) {
     const threshold = config.threeD.threshold;
 
-    let filtered = [];
+    let pointsTreshold = [];
     points.forEach((point) => {
-        if (point.value >= threshold) filtered.push(point);
+        if (point.value >= threshold) pointsTreshold.push(point);
     });
 
     console.log(
-        `Applying the threshold of ${threshold} sorted out ${points.length - filtered.length} points.`,
+        `Applying the threshold of ${threshold} sorted out ${points.length - pointsTreshold.length} points.`,
     );
-    return filtered;
+    return pointsTreshold;
 }
 
 function subsample(points, config) {

@@ -1,7 +1,7 @@
-function flattenPoints(points, x, y, z) {
+function flattenPoints(points, id) {
     let filtered = [];
     const eps = 5;
-    if (!x && y && z) {
+    if (id === 1) {
         points.forEach((point) => {
             if (Math.abs(point.x) < eps) {
                 filtered.push({
@@ -13,7 +13,7 @@ function flattenPoints(points, x, y, z) {
         });
     }
 
-    if (x && !y && z) {
+    if (id === 2) {
         points.forEach((point) => {
             if (Math.abs(point.y) < eps) {
                 filtered.push({
@@ -25,7 +25,7 @@ function flattenPoints(points, x, y, z) {
         });
     }
 
-    if (x && y && !z) {
+    if (id === 3) {
         points.forEach((point) => {
             if (Math.abs(point.z) < eps) {
                 filtered.push({

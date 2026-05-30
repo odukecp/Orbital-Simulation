@@ -40,8 +40,8 @@ function pointsToMatrix(points, id) {
     let matrix = createMatrix(size);
 
     points.forEach((point) => {
-        const x = Math.floor(point.x);
-        const y = Math.floor(point.y);
+        const x = Math.round(point.x);
+        const y = Math.round(point.y);
 
         matrix[x][y] = point.value;
     });

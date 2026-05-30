@@ -72,6 +72,7 @@ form#advanced-toggle {
 .heatmap-wrap {
     width: 30vw;
     height: 30vw;
+    border: 1px solid white;
 }
 
 .loader {
@@ -80,7 +81,7 @@ form#advanced-toggle {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--primary-transp);
+    background: #000;
     z-index: 99999;
 }
 
@@ -88,8 +89,8 @@ form#advanced-toggle {
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: 8px solid var(--black-transp);
-    border-top: 8px solid var(--secondary);
+    border: 8px solid var(--secondary);
+    border-top: 8px solid var(--primary);
     animation: spin 1s linear infinite;
 }
 

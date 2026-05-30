@@ -5,12 +5,16 @@ function applyWavefunction(points, config) {
 
     validateQuantumNumbers(n, l, m);
 
-    points.forEach((point) => {
+    let pointsWF = points;
+
+    pointsWF.forEach((point) => {
         const { x, y, z } = point;
 
         const r = Math.sqrt(x ** 2 + y ** 2 + z ** 2);
         const theta = Math.acos(z / r);
         const phi = Math.atan2(y, x);
+
+        // console.log(x, y, z, r, theta, phi);
 
         if (r === 0) {
             const theta = 0;
@@ -20,9 +24,9 @@ function applyWavefunction(points, config) {
         point.value = wavefunction(n, l, m, r, theta, phi);
     });
 
-    console.info(`Applied the wavefunction for the (${n}, ${l}, ${m})-orbital to all points.`);
+    console.log(`Applied the wavefunction for the (${n}, ${l}, ${m})-orbital to all points.`);
 
-    return points;
+    return pointsWF;
 }
 
 export { applyWavefunction };

@@ -72,7 +72,7 @@ function sphericalHarmonic(l, m, theta, phi) {
 
     if (m < 0) {
         const sign = absM % 2 === 0 ? 1 : -1;
-        result = {
+        res = {
             re: sign * res.re,
             im: -sign * res.im,
         };
