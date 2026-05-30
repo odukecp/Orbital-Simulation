@@ -19,15 +19,20 @@ import { normalize } from './simulation/normalization.js';
 import { flattenPoints } from './simulation/sampling2d.js';
 import { applyThreshold, subsample } from './simulation/threshold.js';
 import { applyWavefunction } from './simulation/wavefunction.js';
-import { aELOrbSelSubmit } from './ui/eventListeners.js';
+import { aELAdvSet, aELOrbSelSubmit } from './ui/eventListeners.js';
 import { hideLoader, showLoader } from './ui/loader.js';
 import { removeExistingHMCanvases } from './ui/base.js';
 import { createHeatmap } from './rendering/heatmap/createHeatmap.js';
 
 aELOrbSelSubmit(initGeneration);
+aELAdvSet();
 
 async function initGeneration(config) {
     showLoader('viewport-wrap');
+
+    for (let i = 1; i <= 3; i++) {
+        showLoader(`heatmap-${i}`);
+    }
 
     const start = performance.now();
 
@@ -65,8 +70,6 @@ async function initGeneration(config) {
 }
 
 function generation2d(config, id) {
-    showLoader(`heatmap-${id}`);
-
     let points = create2DGrid(config, id);
 
     let pointsWF = applyWavefunction(points, config);

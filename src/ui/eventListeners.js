@@ -9,4 +9,15 @@ function aELOrbSelSubmit(onClick) {
     });
 }
 
-export { aELOrbSelSubmit };
+function aELAdvSet() {
+    const checkbox = document.getElementById('advanced-toggle');
+    const advancedElements = document.querySelectorAll('.advanced');
+
+    checkbox.addEventListener('change', () => {
+        advancedElements.forEach((el) => {
+            el.classList.toggle('hidden');
+        });
+    });
+}
+
+export { aELOrbSelSubmit, aELAdvSet };

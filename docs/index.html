@@ -3,94 +3,98 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>orbital-simulation</title>
-      <script type="module" crossorigin src="/Orbital-Simulation/assets/index-qyLIYvLt.js"></script>
-      <link rel="stylesheet" crossorigin href="/Orbital-Simulation/assets/index-Dipp-uDg.css">
+        <title>Orbital Simulation</title>
+      <script type="module" crossorigin src="/Orbital-Simulation/assets/index-DK5WOsIL.js"></script>
+      <link rel="stylesheet" crossorigin href="/Orbital-Simulation/assets/index-KJMT7OqS.css">
     </head>
     <body>
         <main>
-            <h1>Atom-Orbitale</h1>
-            <div class="config wrap">
-                <form id="orbital-select">
-                    <fieldset>
-                        <legend>Quantenzahlen</legend>
-
-                        <label for="form-n">n</label>
-                        <input id="form-n" type="number">
-
-                        <label for="form-l">l</label>
-                        <input id="form-l" type="number">
-
-                        <label for="form-m">m</label>
-                        <input id="form-m" type="number">
-                    </fieldset>
-                </form>
-                <form id="view-select">
-                    <fieldset>
-                        <legend>Darstellung</legend>
-                        <button type="submit">Orbital Generieren</button>
-                    </fieldset>
-                </form>
-                <form id="advanced" class="advanced hidden">
-                    <fieldset>
-                        <legend>Advanced-Settings</legend>
-                        <p>Ich empfehle an diesen Einstellungen nichts zu ändern!</p>
+            <h1>Orbital Simulation</h1>
+            <div class="content">
+                <div class="config-wrap">
+                    <form id="orbital-select">
                         <fieldset>
-                            <legend>Graphic</legend>
+                            <legend>Quantenzahlen</legend>
 
-                            <label for="form-size">Size</label>
-                            <input id="form-size" type="number">
+                            <label for="form-n">n</label>
+                            <input id="form-n" type="number">
 
-                            <label for="form-count">Count</label>
-                            <input id="form-count" type="number">
+                            <label for="form-l">l</label>
+                            <input id="form-l" type="number">
+
+                            <label for="form-m">m</label>
+                            <input id="form-m" type="number">
                         </fieldset>
+                    </form>
+                    <form id="view-select">
                         <fieldset>
-                            <legend>Heatmap</legend>
-
-                            <label for="form-radius">Radius</label>
-                            <input id="form-radius" type="number">
-
-                            <label for="form-maxopacity">Max Opacity</label>
-                            <input id="form-maxopacity" type="number">
-
-                            <label for="form-minopacity">Min Opacity</label>
-                            <input id="form-minopacity" type="number">
-
-                            <label for="form-blur">Blur</label>
-                            <input id="form-blur" type="number">
+                            <legend>Darstellung</legend>
+                            <button type="submit">Orbital Generieren</button>
                         </fieldset>
+                    </form>
+                    <form id="advanced" class="advanced hidden">
                         <fieldset>
-                            <legend>3D-Grid</legend>
+                            <legend>Advanced-Settings</legend>
+                            <p>Ich empfehle an diesen Einstellungen nichts zu ändern!</p>
+                            <fieldset>
+                                <legend>Graphic</legend>
 
-                            <label for="form-threshold">Threshold</label>
-                            <input id="form-threshold" type="number">
+                                <label for="form-size">Size</label>
+                                <input id="form-size" type="number">
 
-                            <label for="form-reduce">Reduce</label>
-                            <input id="form-reduce" type="number">
+                                <label for="form-count">Count</label>
+                                <input id="form-count" type="number">
+                            </fieldset>
+                            <fieldset>
+                                <legend>Heatmap</legend>
+
+                                <label for="form-radius">Radius</label>
+                                <input id="form-radius" type="number">
+
+                                <label for="form-maxopacity">Max Opacity</label>
+                                <input id="form-maxopacity" type="number">
+
+                                <label for="form-minopacity">Min Opacity</label>
+                                <input id="form-minopacity" type="number">
+
+                                <label for="form-blur">Blur</label>
+                                <input id="form-blur" type="number">
+                            </fieldset>
+                            <fieldset>
+                                <legend>3D-Grid</legend>
+
+                                <label for="form-threshold">Threshold</label>
+                                <input id="form-threshold" type="number">
+
+                                <label for="form-reduce">Reduce</label>
+                                <input id="form-reduce" type="number">
+
+                                <label for="form-rotationspeed">Rotation Speed</label>
+                                <input id="form-rotationspeed" type="number">
+                            </fieldset>
                         </fieldset>
-                    </fieldset>
-                </form>
+                    </form>
+                </div>
+
+                <div class="output-wrap">
+                    <div class="viewport-wrap" id="viewport-wrap"></div>
+
+                    <div class="heatmap-container">
+                        <div class="heatmap-wrap" id="heatmap-1"></div>
+                        <div class="heatmap-wrap" id="heatmap-2"></div>
+                        <div class="heatmap-wrap" id="heatmap-3"></div>
+                    </div>
+                </div>
             </div>
             
-            <div id="viewport-wrap"></div>
-
-            <div class="heatmap-container">
-             <div class="heatmap-wrap" id="heatmap-1"></div>
-             <div class="heatmap-wrap" id="heatmap-2"></div>
-             <div class="heatmap-wrap" id="heatmap-3"></div>
-            </div>
         </main>
         <footer>
-            <p class="footer">Made by <a href="https://github.com/odukecp" class="link">Oskar Herzog</a> using <a href="https://www.patrick-wied.at/static/heatmapjs/" class="link">heatmap.js</a> by Patrick Wied and <a href="https://threejs.org/" class="link">three.js</a> </p>
-            <form id="advanced-toggle">
-                <label for="advanced-toggle">Erweiterte Einstellungen</label>
-                <input type="checkbox" name="advanced-toggle" onclick="
-                    const advancedElements = document.querySelectorAll('.advanced');
-                    advancedElements.forEach(advancedElement => {
-                        advancedElement.classList.toggle('hidden');
-                    });"
-                >
-            </form>
+            <p class="footer">Made by <a href="https://github.com/odukecp" class="link">Oskar Herzog</a> using <a href="https://threejs.org/" class="link">three.js</a>  and <a href="https://plotly.com/javascript/heatmaps/" class="link">plotly.js</a>.</p>
+            <label class="toggle">
+                <input type="checkbox" id="advanced-toggle">
+                <span class="slider"></span>
+                Erweiterte Einstellungen
+            </label>
         </footer>
     </body>
 </html>

@@ -21,6 +21,7 @@ function readConfig() {
         threeD: {
             threshold: getConfig('form-threshold') ?? defaultConfig.threeD.threshold,
             reduce: getConfig('form-reduce') ?? defaultConfig.threeD.reduce,
+            rotationspeed: getConfig('form-rotationspeed') ?? defaultConfig.threeD.rotationspeed,
         },
 
         colors: defaultConfig.colors,

@@ -5,7 +5,7 @@ const defaultConfig = {
 
     graphic: {
         size: 100,
-        count: 300,
+        count: 250,
     },
 
     heatmap: {
@@ -18,6 +18,7 @@ const defaultConfig = {
     threeD: {
         threshold: 0.01,
         reduce: 0.875,
+        rotationspeed: 0.3,
     },
 
     colors: [
