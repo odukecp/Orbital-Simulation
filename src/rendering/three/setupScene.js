@@ -13,6 +13,50 @@ const viewportWidth = viewportWrap.clientWidth;
 // Scene
 const scene = new THREE.Scene();
 
+// Axes
+const axesLength = config.graphic.size / 2;
+const labelScale = 4;
+const axesHelper = new THREE.AxesHelper(axesLength);
+scene.add(axesHelper);
+function createAxisLabel(text) {
+    const canvas = document.createElement('canvas');
+    canvas.width = 128;
+    canvas.height = 128;
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = 'white';
+    ctx.font = '80px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    ctx.fillText(text, 64, 64);
+
+    const texture = new THREE.CanvasTexture(canvas);
+
+    const material = new THREE.SpriteMaterial({
+        map: texture,
+        transparent: true,
+    });
+
+    return new THREE.Sprite(material);
+}
+const xLabel = createAxisLabel('X');
+xLabel.position.set(axesLength + labelScale, 0, 0);
+xLabel.scale.set(labelScale, labelScale, labelScale);
+
+const yLabel = createAxisLabel('Y');
+yLabel.position.set(0, axesLength + labelScale, 0);
+yLabel.scale.set(labelScale, labelScale, labelScale);
+
+const zLabel = createAxisLabel('Z');
+zLabel.position.set(0, 0, axesLength + labelScale);
+zLabel.scale.set(labelScale, labelScale, labelScale);
+
+scene.add(xLabel);
+scene.add(yLabel);
+scene.add(zLabel);
+
 // Camera
 const camera = new THREE.PerspectiveCamera(75, viewportWidth / viewportHeight, 0.1, 1000);
 const cameraPosition = config.graphic.size / 2 + 10;

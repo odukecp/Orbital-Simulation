@@ -82,6 +82,7 @@ label {
     margin-top: 10px;
 }
 
+select,
 [type='number'] {
     width: 100%;
     padding: 8px 10px;
@@ -173,6 +174,8 @@ label {
 button {
     width: 100%;
     padding: 10px 14px;
+
+    margin-top: 5px;
 
     border: none;
     border-radius: 10px;

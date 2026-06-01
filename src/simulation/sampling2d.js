@@ -5,8 +5,8 @@ function flattenPoints(points, id) {
         points.forEach((point) => {
             if (Math.abs(point.x) < eps) {
                 filtered.push({
-                    x: point.y,
-                    y: point.z,
+                    x: -point.z,
+                    y: point.y,
                     value: point.value,
                 });
             }

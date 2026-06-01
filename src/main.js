@@ -23,6 +23,7 @@ import { aELAdvSet, aELOrbSelSubmit } from './ui/eventListeners.js';
 import { hideLoader, showLoader } from './ui/loader.js';
 import { removeExistingHMCanvases } from './ui/base.js';
 import { createHeatmap } from './rendering/heatmap/createHeatmap.js';
+import { realSphericalHarmonic } from './utils/physics.js';
 
 aELOrbSelSubmit(initGeneration);
 aELAdvSet();
@@ -70,17 +71,18 @@ async function initGeneration(config) {
 }
 
 function generation2d(config, id) {
-    let points = create2DGrid(config, id);
+    const points = create2DGrid(config, id);
 
-    let pointsWF = applyWavefunction(points, config);
+    const pointsWF = applyWavefunction(points, config);
+    console.log(config.display.orbitaltype);
 
-    let points2d = flattenPoints(pointsWF, id);
+    const points2d = flattenPoints(pointsWF, id);
 
-    let pointsNormalized = normalize(points2d);
+    const pointsNormalized = normalize(points2d);
 
-    let pointsAdj = adjustCoordinates(pointsNormalized, id);
+    const pointsAdj = adjustCoordinates(pointsNormalized, id);
 
-    let matrix = pointsToMatrix(pointsAdj, id);
+    const matrix = pointsToMatrix(pointsAdj, id);
 
     createHeatmap(matrix, id);
 

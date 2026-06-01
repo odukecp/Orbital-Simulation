@@ -8,6 +8,10 @@ const defaultConfig = {
         count: 250,
     },
 
+    display: {
+        orbitaltype: 'real',
+    },
+
     heatmap: {
         radius: 10,
         maxopacity: 1,

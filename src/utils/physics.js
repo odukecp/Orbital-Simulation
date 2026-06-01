@@ -80,6 +80,22 @@ function sphericalHarmonic(l, m, theta, phi) {
     return res;
 }
 
+function realSphericalHarmonic(l, m, theta, phi) {
+    if (m === 0) {
+        return sphericalHarmonic(l, 0, theta, phi).re;
+    }
+
+    const y = sphericalHarmonic(l, Math.abs(m), theta, phi);
+
+    const sign = Math.pow(-1, Math.abs(m));
+
+    if (m > 0) {
+        return Math.sqrt(2) * sign * y.re;
+    }
+
+    return Math.sqrt(2) * sign * y.im;
+}
+
 function radialWavefunction(n, l, r, a0 = 1) {
     const rho = (2 * r) / (n * a0);
     const f1 = Math.sqrt(
@@ -92,6 +108,16 @@ function radialWavefunction(n, l, r, a0 = 1) {
     let res = f1 * f2 * f3 * f4;
 
     return res;
+}
+
+function realWavefunction(n, l, m, r, theta, phi) {
+    const R = radialWavefunction(n, l, r);
+
+    const Y = realSphericalHarmonic(l, m, theta, phi);
+
+    const psi = R * Y;
+
+    return psi * psi;
 }
 
 function wavefunction(n, l, m, r, theta, phi) {
@@ -111,6 +137,8 @@ export {
     associatedLaguerre,
     associatedLegendre,
     sphericalHarmonic,
+    realSphericalHarmonic,
     radialWavefunction,
+    realWavefunction,
     wavefunction,
 };

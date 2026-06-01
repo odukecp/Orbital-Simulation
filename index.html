@@ -27,7 +27,15 @@
                     <form id="view-select">
                         <fieldset>
                             <legend>Darstellung</legend>
-                            <button type="submit">Orbital Generieren</button>
+
+                            <label for="form-orbitaltype">Orbital-Typ</label>
+                            <select id="form-orbitaltype">
+                                <option value="real">Real</option>
+                                <option value="complex">Komplex</option>
+                            </select>
+
+                            <label for="form-submit">Simulation starten</label>
+                            <button id="form-submit" type="submit">Orbital Generieren</button>
                         </fieldset>
                     </form>
                     <form id="advanced" class="advanced hidden">

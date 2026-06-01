@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Orbital Simulation</title>
-      <script type="module" crossorigin src="/Orbital-Simulation/assets/index-DK5WOsIL.js"></script>
-      <link rel="stylesheet" crossorigin href="/Orbital-Simulation/assets/index-KJMT7OqS.css">
+      <script type="module" crossorigin src="/Orbital-Simulation/assets/index-CQ_hzqj1.js"></script>
+      <link rel="stylesheet" crossorigin href="/Orbital-Simulation/assets/index-ttINZ86v.css">
     </head>
     <body>
         <main>
@@ -29,7 +29,15 @@
                     <form id="view-select">
                         <fieldset>
                             <legend>Darstellung</legend>
-                            <button type="submit">Orbital Generieren</button>
+
+                            <label for="form-orbitaltype">Orbital-Typ</label>
+                            <select id="form-orbitaltype">
+                                <option value="real">Real</option>
+                                <option value="complex">Komplex</option>
+                            </select>
+
+                            <label for="form-submit">Simulation starten</label>
+                            <button id="form-submit" type="submit">Orbital Generieren</button>
                         </fieldset>
                     </form>
                     <form id="advanced" class="advanced hidden">

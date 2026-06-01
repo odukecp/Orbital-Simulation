@@ -1,4 +1,4 @@
-import { validateQuantumNumbers, wavefunction } from '../utils/physics.js';
+import { realWavefunction, validateQuantumNumbers, wavefunction } from '../utils/physics.js';
 
 function applyWavefunction(points, config) {
     const { n, l, m } = config;
@@ -21,7 +21,11 @@ function applyWavefunction(points, config) {
             const phi = 0;
         }
 
-        point.value = wavefunction(n, l, m, r, theta, phi);
+        if (config.display.orbitaltype === 'real') {
+            point.value = realWavefunction(n, l, m, r, theta, phi);
+        } else {
+            point.value = wavefunction(n, l, m, r, theta, phi);
+        }
     });
 
     console.log(`Applied the wavefunction for the (${n}, ${l}, ${m})-orbital to all points.`);

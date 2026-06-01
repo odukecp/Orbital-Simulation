@@ -11,6 +11,10 @@ function readConfig() {
             count: getConfig('form-count') ?? defaultConfig.graphic.count,
         },
 
+        display: {
+            orbitaltype: getStringConfig('form-orbitaltype') ?? defaultConfig.display.orbitaltype,
+        },
+
         heatmap: {
             radius: getConfig('form-radius') ?? defaultConfig.heatmap.radius,
             maxopacity: getConfig('form-maxopacity') ?? defaultConfig.heatmap.maxopacity,
@@ -32,6 +36,12 @@ function getConfig(id) {
     const element = document.getElementById(id);
     if (element.value === '') return null;
     return element ? Number(element.value) : null;
+}
+
+function getStringConfig(id) {
+    const element = document.getElementById(id);
+    if (element.value === '') return null;
+    return element ? String(element.value) : null;
 }
 
 export { readConfig };
