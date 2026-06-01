@@ -3,7 +3,7 @@ import Plotly from 'plotly.js-dist';
 
 const colors = [
     { r: 0, g: 0, b: 0 },
-    { r: 0, g: 0, b: 80 },
+    { r: 0, g: 0, b: 150 },
     { r: 20, g: 255, b: 255 },
     { r: 20, g: 255, b: 235 },
     { r: 20, g: 255, b: 216 },

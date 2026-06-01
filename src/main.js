@@ -24,6 +24,7 @@ import { hideLoader, showLoader } from './ui/loader.js';
 import { removeExistingHMCanvases } from './ui/base.js';
 import { createHeatmap } from './rendering/heatmap/createHeatmap.js';
 import { realSphericalHarmonic } from './utils/physics.js';
+import { analyzeArrayOfObjects } from './utils/math.js';
 
 aELOrbSelSubmit(initGeneration);
 aELAdvSet();
@@ -50,10 +51,10 @@ async function initGeneration(config) {
 
     let pointsNormalized = normalize(pointsWF);
 
-    let pointsTreshold = applyThreshold(pointsNormalized, config);
+    let pointsThreshold = applyThreshold(pointsNormalized, config);
 
     // 3D Rendering:
-    renderPoints(pointsTreshold, config);
+    renderPoints(pointsThreshold, config);
 
     hideLoader('viewport-wrap');
 
@@ -64,8 +65,6 @@ async function initGeneration(config) {
         generation2d(config, i);
     }
 
-    // console.log(nonXPoints[0], nonYPoints[0], nonZPoints[0]);
-
     const duration = Math.round(performance.now() - start);
     console.log(`\nThe generation-process took \~${duration}ms.\n\n\n`);
 }
@@ -74,7 +73,6 @@ function generation2d(config, id) {
     const points = create2DGrid(config, id);
 
     const pointsWF = applyWavefunction(points, config);
-    console.log(config.display.orbitaltype);
 
     const points2d = flattenPoints(pointsWF, id);
 

@@ -1,7 +1,7 @@
 const defaultConfig = {
     n: 4,
-    l: 2,
-    m: 1,
+    l: 3,
+    m: 0,
 
     graphic: {
         size: 100,
@@ -22,10 +22,11 @@ const defaultConfig = {
     threeD: {
         threshold: 0.01,
         reduce: 0.875,
-        rotationspeed: 0.3,
+        rotationspeed: 0,
     },
 
     colors: [
+        { r: 0, g: 0, b: 150 },
         { r: 20, g: 255, b: 255 },
         { r: 20, g: 255, b: 235 },
         { r: 20, g: 255, b: 216 },

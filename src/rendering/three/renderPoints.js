@@ -19,7 +19,9 @@ function renderPoints(points, config) {
     const colors = [];
     const colormap = config.colors;
     points.forEach((point) => {
-        const shift = Math.random() / 5;
+        // const shift = Math.random() / 5;
+        const shift = 0;
+
         positions.push(point.x + shift, point.y + shift, point.z + shift);
 
         let cI =
@@ -41,7 +43,7 @@ function renderPoints(points, config) {
         size: 0.15,
 
         transparent: true,
-        opacity: 0.3,
+        opacity: 0.15,
         depthWrite: false,
         vertexColors: true,
     });
