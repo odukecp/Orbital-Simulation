@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 *.txt
+
+# README-file (work in progress)
+README.md
