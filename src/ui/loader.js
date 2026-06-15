@@ -10,9 +10,16 @@ function showLoader(containerId) {
 
     loader.className = 'loader';
 
-    loader.innerHTML = `
-        <div class="loader-spinner"></div>
-    `;
+    if (containerId === 'viewport-wrap') {
+        loader.innerHTML = `
+            <div class="loader-spinner"></div>
+            <p id="loader-text"></p>
+        `;
+    } else {
+        loader.innerHTML = `
+            <div class="loader-spinner"></div>
+        `;
+    }
 
     container.appendChild(loader);
 }
@@ -29,4 +36,13 @@ function hideLoader(containerId) {
     }
 }
 
-export { showLoader, hideLoader };
+function updateLoaderText(text) {
+    const loaderText = document.getElementById('loader-text') || null;
+    if (!loaderText) {
+        console.warn('There was no loader text element');
+        return;
+    }
+    loaderText.innerHTML = text;
+}
+
+export { showLoader, hideLoader, updateLoaderText };
