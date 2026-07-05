@@ -12,6 +12,7 @@
         "vite": "^8.0.14"
     },
     "dependencies": {
+        "@fontsource/space-grotesk": "^5.2.10",
         "heatmap.js": "^2.0.5",
         "plotly.js-dist": "^3.5.1",
         "three": "^0.184.0"

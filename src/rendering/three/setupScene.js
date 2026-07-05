@@ -20,17 +20,17 @@ const axesHelper = new THREE.AxesHelper(axesLength);
 scene.add(axesHelper);
 function createAxisLabel(text) {
     const canvas = document.createElement('canvas');
-    canvas.width = 128;
-    canvas.height = 128;
+    canvas.width = 64;
+    canvas.height = 64;
 
     const ctx = canvas.getContext('2d');
 
     ctx.fillStyle = 'white';
-    ctx.font = '80px Arial';
+    ctx.font = '20px Arial';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    ctx.fillText(text, 64, 64);
+    ctx.fillText(text, 32, 32);
 
     const texture = new THREE.CanvasTexture(canvas);
 

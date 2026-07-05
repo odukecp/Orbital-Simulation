@@ -47,7 +47,7 @@ function create2DGrid(config, id) {
         for (let j = min; j < max; j += delta) {
             for (let k = min; k < max; k += delta) {
                 points.push({
-                    x: 0,
+                    x: delta / 2,
                     y: j,
                     z: k,
                     value: 0,
@@ -61,7 +61,7 @@ function create2DGrid(config, id) {
             for (let k = min; k < max; k += delta) {
                 points.push({
                     x: i,
-                    y: 0,
+                    y: delta / 2,
                     z: k,
                     value: 0,
                 });
@@ -75,7 +75,7 @@ function create2DGrid(config, id) {
                 points.push({
                     x: i,
                     y: j,
-                    z: 0,
+                    z: delta / 2,
                     value: 0,
                 });
             }

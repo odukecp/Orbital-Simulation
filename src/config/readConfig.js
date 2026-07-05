@@ -15,13 +15,6 @@ function readConfig() {
             orbitaltype: getStringConfig('form-orbitaltype') ?? defaultConfig.display.orbitaltype,
         },
 
-        heatmap: {
-            radius: getConfig('form-radius') ?? defaultConfig.heatmap.radius,
-            maxopacity: getConfig('form-maxopacity') ?? defaultConfig.heatmap.maxopacity,
-            minopacity: getConfig('form-minopacity') ?? defaultConfig.heatmap.minopacity,
-            blur: getConfig('form-blur') ?? defaultConfig.heatmap.blur,
-        },
-
         threeD: {
             threshold: getConfig('form-threshold') ?? defaultConfig.threeD.threshold,
             reduce: getConfig('form-reduce') ?? defaultConfig.threeD.reduce,

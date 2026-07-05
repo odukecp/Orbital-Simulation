@@ -1,28 +1,21 @@
 const defaultConfig = {
-    n: 4,
-    l: 3,
+    n: 2,
+    l: 1,
     m: 0,
 
     graphic: {
-        size: 100,
-        count: 250,
+        size: 30,
+        count: 200,
     },
 
     display: {
         orbitaltype: 'real',
     },
 
-    heatmap: {
-        radius: 10,
-        maxopacity: 1,
-        minopacity: 0,
-        blur: 0.75,
-    },
-
     threeD: {
-        threshold: 0.01,
+        threshold: 0.005,
         reduce: 0.875,
-        rotationspeed: 0,
+        rotationspeed: 0.2,
     },
 
     colors: [

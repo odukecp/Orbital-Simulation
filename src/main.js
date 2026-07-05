@@ -7,6 +7,9 @@
 //     \|_______|\|__|\|__|         (by Oskar Herzog)
 //
 
+import '@fontsource/space-grotesk/400.css';
+import '@fontsource/space-grotesk/600.css';
+import '@fontsource/space-grotesk/700.css';
 import './styles/style.css';
 import {
     adjustCoordinates,
@@ -21,13 +24,14 @@ import { applyThreshold, subsample } from './simulation/threshold.js';
 import { applyWavefunction } from './simulation/wavefunction.js';
 import { aELAdvSet, aELOrbSelSubmit } from './ui/eventListeners.js';
 import { hideLoader, showLoader, updateLoaderText } from './ui/loader.js';
-import { removeExistingHMCanvases } from './ui/base.js';
+import { addDefaultValues, removeExistingHMCanvases } from './ui/base.js';
 import { createHeatmap } from './rendering/heatmap/createHeatmap.js';
 import { realSphericalHarmonic } from './utils/physics.js';
 import { analyzeArrayOfObjects } from './utils/math.js';
 
 aELOrbSelSubmit(initGeneration);
 aELAdvSet();
+addDefaultValues();
 
 async function initGeneration(config) {
     showLoader('viewport-wrap');

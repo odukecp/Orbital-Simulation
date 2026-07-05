@@ -1,3 +1,5 @@
+import { readConfig } from '../config/readConfig';
+
 function get3DViewport() {
     const v = document.getElementById('viewport-wrap');
     if (!v) throw new Error('Rendering initialization failed, there is no viewport wrap.');
@@ -20,4 +22,16 @@ function removeExistingHMCanvases() {
     });
 }
 
-export { get3DViewport, getHeatmapWrap, removeExistingHMCanvases };
+function addDefaultValues() {
+    const formN = document.getElementById('form-n');
+    const formL = document.getElementById('form-l');
+    const formM = document.getElementById('form-m');
+
+    const config = readConfig();
+
+    formN.value = config.n;
+    formL.value = config.l;
+    formM.value = config.m;
+}
+
+export { get3DViewport, getHeatmapWrap, removeExistingHMCanvases, addDefaultValues };

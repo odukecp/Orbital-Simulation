@@ -19,8 +19,8 @@ function renderPoints(points, config) {
     const colors = [];
     const colormap = config.colors;
     points.forEach((point) => {
-        // const shift = Math.random() / 5;
-        const shift = 0;
+        const shift = Math.random() / 3;
+        // const shift = 0;
 
         positions.push(point.x + shift, point.y + shift, point.z + shift);
 
