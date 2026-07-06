@@ -1,10 +1,18 @@
 import * as THREE from 'three';
 
-import { scene } from './setupScene';
+import { camera, controls, scene } from './setupScene';
 
 let currentPointCloud = null;
 
 function renderPoints(points, config) {
+    controls.autoRotateSpeed = -config.threeD.rotationspeed;
+    controls.autoRotate = config.threeD.rotationspeed !== 0;
+
+    const cameraPosition = config.graphic.size / 2 + 10;
+    camera.position.x = cameraPosition;
+    camera.position.y = cameraPosition;
+    camera.position.z = cameraPosition;
+
     console.log('Scene created, beginning to render points');
 
     if (currentPointCloud) {

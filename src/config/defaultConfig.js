@@ -4,7 +4,7 @@ const defaultConfig = {
     m: 0,
 
     graphic: {
-        size: 30,
+        size: 45,
         count: 200,
     },
 

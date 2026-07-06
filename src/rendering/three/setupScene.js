@@ -102,4 +102,4 @@ window.addEventListener('resize', () => {
     renderer.setSize(viewportWidth, viewportHeight);
 });
 
-export { scene };
+export { camera, controls, scene };
