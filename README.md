@@ -91,7 +91,7 @@ First, the input quantum numbers are validated by `validateQuantumNumbers()` in 
 
 - $r=\sqrt{x^2+y^2+z^2}$
 - $\theta=\arccos\left(\frac{z}{r}\right)$
-- $\varphi = \operatorname{atan2}(y, x)$
+- $\varphi = \mathrm{atan2}(y, x)$
 
 Afterwards, it is determined whether the orbital simulation shall be real or complex (config):
 
