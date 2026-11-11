@@ -139,8 +139,10 @@ where $P_l^m$ are the associated Legendre polynomials (`associatedLegendre()`).
 **Real orbitals**
 
 The complex spherical harmonics with $m \neq 0$ contain the factor $e^{im\varphi}$ and are therefore not what is usually drawn in chemistry textbooks. The real orbitals are obtained as linear combinations of $Y_l^{m}$ and $Y_l^{-m}$:
-
-$$Y_{lm}^{\text{real}} = \begin{cases} Y_l^0 & m = 0 \\ \sqrt{2}\,(-1)^m \, \mathrm{Re}\left(Y_l^{|m|}\right) & m > 0 \\ \sqrt{2}\,(-1)^m \, \mathrm{Im}\left(Y_l^{|m|}\right) & m < 0 \end{cases}$$
+ 
+- for $m = 0$: $Y_{l0}^{\text{real}} = Y_l^0$
+- for $m > 0$: $Y_{lm}^{\text{real}} = \sqrt{2}\,(-1)^m \, \mathrm{Re}\left(Y_l^{|m|}\right)$
+- for $m < 0$: $Y_{lm}^{\text{real}} = \sqrt{2}\,(-1)^m \, \mathrm{Im}\left(Y_l^{|m|}\right)$
 
 **Probability density**
 
