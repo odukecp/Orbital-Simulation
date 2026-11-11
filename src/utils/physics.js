@@ -99,7 +99,7 @@ function realSphericalHarmonic(l, m, theta, phi) {
 function radialWavefunction(n, l, r, a0 = 1) {
     const rho = (2 * r) / (n * a0);
     const f1 = Math.sqrt(
-        (Math.pow(2 / (n * a0), 3) * factorial(n - l - 1)) / (2 * n * factorial(n + 1)),
+        (Math.pow(2 / (n * a0), 3) * factorial(n - l - 1)) / (2 * n * factorial(n +l)),
     );
     const f2 = Math.exp(-rho / 2);
     const f3 = Math.pow(rho, l);
