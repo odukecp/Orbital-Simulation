@@ -126,13 +126,13 @@ $$\psi_{nlm}(r, \theta, \varphi) = R_{nl}(r) \cdot Y_l^m(\theta, \varphi)$$
 
 **Radial part**
 
-$$R_{nl}(r) = \sqrt{\left(\frac{2}{n a_0}\right)^3 \frac{(n-l-1)!}{2n\,(n+l)!}} \; e^{-\rho/2} \, \rho^{l} \, L_{n-l-1}^{2l+1}(\rho), \qquad \rho = \frac{2r}{n a_0}$$
+$$R_{nl}(r) = \sqrt{\left(\frac{2}{n a_0}\right)^3 \frac{(n-l-1)!}{2n\cdot(n+l)!}} \cdot e^{-\rho/2} \cdot \rho^{l} \cdot L_{n-l-1}^{2l+1}(\rho), \qquad \rho = \frac{2r}{n a_0}$$
 
 where $L_k^{\alpha}$ are the associated Laguerre polynomials (`associatedLaguerre()`).
 
 **Angular part**
 
-$$Y_l^m(\theta, \varphi) = \sqrt{\frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}} \; P_l^m(\cos\theta) \, e^{im\varphi}$$
+$$Y_l^m(\theta, \varphi) = \sqrt{\frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}} \cdot P_l^m(\cos\theta) \cdot e^{im\varphi}$$
 
 where $P_l^m$ are the associated Legendre polynomials (`associatedLegendre()`).
 
@@ -141,8 +141,8 @@ where $P_l^m$ are the associated Legendre polynomials (`associatedLegendre()`).
 The complex spherical harmonics with $m \neq 0$ contain the factor $e^{im\varphi}$ and are therefore not what is usually drawn in chemistry textbooks. The real orbitals are obtained as linear combinations of $Y_l^{m}$ and $Y_l^{-m}$:
  
 - for $m = 0$: $Y_{l0}^{\text{real}} = Y_l^0$
-- for $m > 0$: $Y_{lm}^{\text{real}} = \sqrt{2}\,(-1)^m \, \mathrm{Re}\left(Y_l^{|m|}\right)$
-- for $m < 0$: $Y_{lm}^{\text{real}} = \sqrt{2}\,(-1)^m \, \mathrm{Im}\left(Y_l^{|m|}\right)$
+- for $m > 0$: $Y_{lm}^{\text{real}} = \sqrt{2}\cdot(-1)^m \cdot \mathrm{Re}\left(Y_l^{|m|}\right)$
+- for $m < 0$: $Y_{lm}^{\text{real}} = \sqrt{2}\cdot(-1)^m \cdot \mathrm{Im}\left(Y_l^{|m|}\right)$
 
 **Probability density**
 
